@@ -1,0 +1,409 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+:root {
+    --main: #1a73e8;
+    --text: #f5a80c;
+    --back: #fff;
+    --hover: rgb(85, 192, 121);
+}
+
+body {
+    background: url(https://giffiles.alphacoders.com/212/212262.gif);
+    background-size: cover;
+}
+
+
+.gcse-search {
+    border-radius: 5px;
+}
+
+a {
+    color: var(--text);
+    text-decoration: none;
+}
+a:hover {
+    color: var(--hover);
+    text-decoration: underline;
+}
+
+
+/* Start Header  */
+header {
+    width: 100%;
+    height: 30px;
+    background: #fff;
+    box-shadow: inset 0 0 4px black, 0 0 12px black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+header button {
+    border: none;
+    background: unset;
+    color: #000;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+header button:hover {
+    color: var(--hover);
+}
+header button ion-icon {
+    font-size: 1.3rem;
+}
+
+header .logo {
+    display: flex;
+    font-variant: all-petite-caps;
+    border: none;
+}
+header .logo .log {
+    margin-right: 1rem;
+    color: #000;
+}
+
+header .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .content .sp {
+    display: flex;
+    margin-right: 3rem;
+}
+header .content .sp .date {
+    font-size: 13px;
+}
+
+header .content .ck {
+    display: flex;
+}
+
+/* End Header */
+
+
+
+
+
+
+
+
+/* button of messenger  */
+#messangerBtn {
+    font-size: 25px;
+    color: var(--text);
+    background: var(--main);
+    border: none;
+    padding: 1rem;
+    transition: 0.5s;
+    transform: scale(1);
+    visibility: visible;
+    transform-origin: center;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+}
+#messangerBtn:hover {
+    color: var(--hover);
+}
+#messangerBtn.showHide {
+    transform: scale(0);
+    visibility: visible;
+}
+
+/* container messenger of all messages  */
+.containerBot {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    background-color: var(--back);
+    transform-origin: center;
+    width: 0;
+    height: 0;
+    border-radius: 5px;
+    transition: 0.5s;
+    z-index: 400;
+}
+.containerBot.showIt.exp {
+    width: 100vw;
+    height: 100vh;
+}
+.containerBot.showIt {
+    width: 300px;
+    height: 500px;
+}
+
+
+/* Start Title of chat  */
+.containerBot .Title {
+    padding: 1rem;
+    background: var(--main);
+    font-weight: bold;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.containerBot .Title .btnsTit #close {
+    font-size: 20px;
+    color: var(--text);
+    background: unset;
+    border: none;
+}
+.containerBot .Title .btnsTit #close:hover {
+    color: var(--hover);
+}
+
+.containerBot .Title .btnsTit #expanding {
+    font-size: 20px;
+    color: var(--text);
+    background: unset;
+    border: none;
+}
+.containerBot .Title .btnsTit #expanding:hover {
+    color: var(--hover);
+}
+
+
+
+/* Start Chatting Content  */
+
+
+.containerBot .chattingContent {
+    background: var(--back);
+    font-size: 13px;
+    overflow: auto;
+    width: 100%;
+    height: 80%;
+    font-weight: 500;
+    color: var(--text);
+    padding: 10px;
+}
+
+.containerBot .chattingContent .user {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 5px;
+    width: 100%;
+    text-align: end;
+    position: relative;
+    margin-bottom: 10px;
+    animation: showIT 0.5s ease-in 1;
+}
+.containerBot .chattingContent .user .userLogo {
+    background: var(--main);
+    padding: 5px;
+    /* flex: 1 0 80px; */
+    max-width: 55px;
+    height: max-content;
+    border-radius: 3px 25px;
+}
+.containerBot .chattingContent .user .userLogo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.containerBot .chattingContent .user .userTalk {
+    background: var(--main);
+    padding: 15px;
+    width: max-content;
+    height: max-content;
+    border-radius: 25px 3px;
+}
+.containerBot .chattingContent .user .userTalk p {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--hover);
+}
+
+
+/* for bot  */
+.containerBot .chattingContent .bot {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    width: 100%;
+    text-align: start;
+    position: relative;
+    margin-bottom: 10px;
+    transform-origin: center;
+    animation: showIT 0.5s ease-in 1;
+}
+.containerBot .chattingContent .bot .botLogo {
+    background: var(--main);
+    padding: 5px;
+    max-width: 55px;
+    height: max-content;
+    border-radius: 25px 3px;
+}
+.containerBot .chattingContent .bot .botLogo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.containerBot .chattingContent .bot .botTalk {
+    background: var(--main);
+    padding: 15px;
+    width: max-content;
+    height: max-content;
+    border-radius: 3px 25px;
+}
+.containerBot .chattingContent .bot .botTalk p {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--hover);
+}
+
+
+/* loading style of bot  */
+.containerBot .chattingContent .loadingBot {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    width: 100%;
+    text-align: end;
+    margin-bottom: 10px;
+    transform-origin: center;
+    animation: showIT 0.5s ease-in 1;
+    position: absolute;
+    left: 10px;
+    bottom: 10%;
+    z-index: 300;
+}
+.containerBot .chattingContent .loadingBot.hide {
+    display: none !important;
+}
+.containerBot .chattingContent .loadingBot .loadingLogo {
+    background: var(--main);
+    padding: 5px;
+    /* flex: 1 0 80px; */
+    max-width: 55px;
+    height: max-content;
+    border-radius: 25px 3px;
+}
+.containerBot .chattingContent .loadingBot .loadingLogo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.containerBot .chattingContent .loadingBot .loadingCat {
+    background: var(--main);
+    padding: 15px;
+    width: max-content;
+    height: max-content;
+    border-radius: 3px 25px;
+    display: flex;
+    gap: 10px;
+}
+.containerBot .chattingContent .loadingBot .loadingCat .cat {
+    width: 15px;
+    height: 15px;
+    background: var(--hover);
+    border-radius: 5px;
+    position: relative;
+}
+.containerBot .chattingContent .loadingBot .loadingCat .load1 {
+    animation: blinking 0.7s ease-in-out 0ms infinite;
+}
+.containerBot .chattingContent .loadingBot .loadingCat .load2 {
+    animation: blinking 0.7s ease-in-out 200ms infinite;
+}
+.containerBot .chattingContent .loadingBot .loadingCat .load3 {
+    animation: blinking 0.7s ease-in-out 400ms infinite;
+}
+@keyframes blinking {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+
+/* error type here  */
+.containerBot .chattingContent .errorType {
+    border: 1px solid rgb(255, 79, 79);
+    background: rgb(209 85 85 / 42%);
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 40px;
+    padding: 1rem;
+    width: 85%;
+    height: max-content;
+    float: right;
+}
+.containerBot .chattingContent .errorType .mx {
+    font-weight: bold;
+    color: rgb(202, 59, 3);
+}
+
+
+/* Start Text and Send Style  */
+
+.containerBot .textSendContent {
+    width: 100%;
+    height: 10%;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--text);
+    font-weight: 500;
+    background: rgb(212, 212, 212);
+    gap: 15px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.containerBot .textSendContent input {
+    flex: 1;
+    outline: none;
+    color: var(--text);
+    border-radius: 5px;
+    border: none;
+    padding: 5px 15px;
+    box-shadow: inset 0 0 4px var(--text);
+    height: 100%;
+}
+.containerBot .textSendContent input:focus {
+    border: 1px solid var(--main);
+}
+.containerBot .textSendContent #send {
+    font-size: 20px;
+    color: var(--text);
+    background: unset;
+    border: none;
+}
+.containerBot .textSendContent #send:hover {
+    color: var(--hover);
+}
+
+
+
+
+@keyframes showIT {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
